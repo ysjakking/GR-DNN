@@ -189,8 +189,6 @@ def test_GRDNN(model_version_name,finetune_lr=0.05,finetune_lr_GR =0.01, pretrai
     corruption_levels = corruption * numpy.ones(max_L_da,dtype=numpy.float32)
 
 
-
-
     ###Step 1: The layer-wise pre-training
     print('... getting the layer-wise pretraining functions')
     pretraining_fns_data = sda.pretraining_functions_data(train_set_x=train_set_x,batch_size=batch_size)
@@ -470,4 +468,4 @@ def test_GRDNN(model_version_name,finetune_lr=0.05,finetune_lr_GR =0.01, pretrai
     print(('The joint fine-tuning of GR-DNN ran for %.2fm' % ((end_time - start_time) / 60.)), file=sys.stderr)
 
 if __name__ == '__main__':
-    test_GRDNN('model1')
+    test_GRDNN('model1') #provide a model_version_name for each training
