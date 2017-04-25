@@ -9,6 +9,7 @@ Before running the code make sure that you have set floatX to float32 in Theano 
 
 To train the model, simply run:<br>
 * python GR-DNN_2D_demo.py<br>
+
 When we first run the code, the Anchor Graph `AG_mnist.pkl.gz_30_1000.mat` will be created.<br>
 
 This step will create files `test_codes_data_model1.mat` and `test_codes_GRDNN_model1.mat`, which contain the 2D code learned by regular stacked DAE and GR-DNN respectively.<br>
