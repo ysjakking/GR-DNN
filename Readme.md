@@ -9,9 +9,13 @@ Before running the code make sure that you have set floatX to float32 in Theano 
 
 To train the model, simply run:<br>
 * python GR-DNN_2D_demo.py<br>
+When we first run the code, the Anchor Graph `AG_mnist.pkl.gz_30_1000.mat` will be created.<br>
+
+This step will create files `test_codes_data_model1.mat` and `test_codes_GRDNN_model1.mat`, which contain the 2D code learned by regular stacked DAE and GR-DNN respectively.<br>
 
 Then, to generate the image visualization of the learned 2D subspace and the reconstructed samples, run:<br>
 * python plot_2D.py<br>
+The resulting images will be saved in the folder './result/'.<br>
 
 
 
@@ -20,12 +24,12 @@ Then, to generate the image visualization of the learned 2D subspace and the rec
 
 If you found this code or our paper useful, please consider citing the following paper:<br>
 
-  @inproceedings{GRDNN17,<br>
+@inproceedings{GRDNN17,<br>
     author    = {Shijie Yang, Liang Li, Shuhui Wang, Weigang Zhang, Qingming Huang},<br>
     title     = {A Graph Regularized Deep Neural Network for Unsupervised Image Representation Learning},<br>
     booktitle = {CVPR},<br>
     year      = {2017}<br>
-  }<br>
+}<br>
 
 
 
