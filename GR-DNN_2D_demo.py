@@ -148,7 +148,7 @@ def load_graph(dataset,K=30,n_c=1000):
     return train_graph,val_graph
 
 
-def test_GRDNN(model_version_name,finetune_lr=0.05,finetune_lr_GR =0.01, pretraining_epochs=50,
+def test_GRDNN(model_version_name,data_path_sizes,graph_path_sizes,finetune_lr=0.05,finetune_lr_GR =0.01, pretraining_epochs=50,
              pretrain_lr=0.01, training_epochs=1000,
              dataset='./mnist.pkl.gz', batch_size=50,corruption=0.2):
 
@@ -176,12 +176,10 @@ def test_GRDNN(model_version_name,finetune_lr=0.05,finetune_lr_GR =0.01, pretrai
         n_ins_data=784,
         n_ins_graph=1000,
         lamuda=1,
-        hidden_layers_sizes=[1000,500,250,2],
-        graph_hidden_sizes= [1200,500,100,2])
+        hidden_layers_sizes=data_path_sizes,
+        graph_hidden_sizes= graph_path_sizes)
 
-    '''
-    model1 : hidden_layers_sizes [1000,500,250,2]           graph_hidden_sizes [1200,500,100,2]           currupt=0.2  lamuda=1
-    '''
+
 
 
     max_L_da= sda.n_layers_data if sda.n_layers_data >= sda.n_layers_graph else sda.n_layers_graph
@@ -468,4 +466,8 @@ def test_GRDNN(model_version_name,finetune_lr=0.05,finetune_lr_GR =0.01, pretrai
     print(('The joint fine-tuning of GR-DNN ran for %.2fm' % ((end_time - start_time) / 60.)), file=sys.stderr)
 
 if __name__ == '__main__':
-    test_GRDNN('model1') #provide a model_version_name for each training
+    test_GRDNN('model1',data_path_sizes=[1000,500,250,2],graph_path_sizes=[1200,500,100,2]) #provide a model_version_name for each training
+
+    '''
+    model1 : hidden_layers_sizes [1000,500,250,2]           graph_hidden_sizes [1200,500,100,2]           currupt=0.2  lamuda=1
+    '''
