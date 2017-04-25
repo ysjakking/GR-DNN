@@ -17,7 +17,7 @@ This step will create files `test_codes_data_model1.mat` and `test_codes_GRDNN_m
 Then, to generate the image visualization of the learned 2D subspace and the reconstructed samples, run:<br>
 * python plot_2D.py<br>
 
-The resulting images will be saved in the folder './result'.<br>
+The resulting images will be saved in the folder 'result/'.<br>
 
 
 
